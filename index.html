@@ -30,7 +30,7 @@ body { font-family:'Rayat','Segoe UI',Arial,sans-serif; background:var(--bg); co
 .hero-content { position:relative;z-index:10;padding:0 52px;max-width:680px;margin-top:60px; }
 .hero-tag { font-size:10px;letter-spacing:.2em;color:rgba(0,255,204,.35);text-transform:uppercase;margin-bottom:26px;display:flex;align-items:center;gap:12px; }
 .hero-tag .ptag { color:var(--cyan);background:rgba(0,255,204,.08);border:.5px solid rgba(0,255,204,.2);padding:3px 10px;border-radius:20px; }
-.h1 { font-size:clamp(50px,9vw,100px);font-weight:900;line-height:.96;letter-spacing:-.025em;color:#fff;font-style:italic; }
+.h1 { font-size:clamp(50px,9vw,100px);font-weight:900;line-height:.96;letter-spacing:-.025em;color:#fff;font-style:normal; }
 .h1 .cy { color:var(--cyan); }
 .h1 .word { display:inline-block;opacity:0;transform:translateY(32px);transition:opacity .55s,transform .55s;margin-left:.16em; }
 .h1 .word:first-child { margin-left:0; }
@@ -59,7 +59,7 @@ body { font-family:'Rayat','Segoe UI',Arial,sans-serif; background:var(--bg); co
 .sec { position:relative;z-index:10;padding:64px 52px; }
 .sec-lbl { font-size:10px;letter-spacing:.2em;color:rgba(0,255,204,.25);text-transform:uppercase;margin-bottom:36px;display:flex;align-items:center;gap:12px; }
 .sec-lbl::before{content:'';width:18px;height:.5px;background:rgba(0,255,204,.25);}
-.sec-title{font-size:clamp(28px,4vw,42px);font-weight:800;color:#fff;font-style:italic;}
+.sec-title{font-size:clamp(28px,4vw,42px);font-weight:800;color:#fff;font-style:normal;}
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(0,255,204,.07);margin-top:36px;}
 .svc{background:var(--bg);padding:36px 28px;cursor:pointer;transition:background .25s;position:relative;}
 .svc:hover{background:#041220;}
@@ -71,11 +71,11 @@ body { font-family:'Rayat','Segoe UI',Arial,sans-serif; background:var(--bg); co
 .svc:hover .svc-arr{opacity:1;transform:translate(-4px,-4px);}
 .pbar { padding:34px 52px;border-top:.5px solid rgba(0,255,204,.1);border-bottom:.5px solid rgba(0,255,204,.1);background:rgba(0,255,204,.02);display:flex;align-items:center;gap:22px; }
 .pbar-line{width:2px;height:38px;background:var(--cyan);opacity:.6;flex-shrink:0;}
-.pbar-txt{font-size:clamp(15px,2.2vw,20px);font-weight:800;font-style:italic;color:#fff;line-height:1.3;}
+.pbar-txt{font-size:clamp(15px,2.2vw,20px);font-weight:800;font-style:normal;color:#fff;line-height:1.3;}
 .pbar-txt span{color:var(--cyan);}
 .stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(0,255,204,.06);}
 .stat{background:var(--bg);padding:36px 28px;}
-.stat-num{font-size:44px;font-weight:900;color:var(--cyan);font-style:italic;line-height:1;letter-spacing:-.02em;}
+.stat-num{font-size:44px;font-weight:900;color:var(--cyan);font-style:normal;line-height:1;letter-spacing:-.02em;}
 .stat-lbl{font-size:12px;color:rgba(255,255,255,.28);margin-top:8px;}
 .works-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:36px;}
 .wk{background:rgba(0,255,204,.035);border:.5px solid rgba(0,255,204,.08);border-radius:10px;aspect-ratio:16/10;display:flex;align-items:flex-end;padding:14px;cursor:pointer;position:relative;overflow:hidden;transition:border-color .25s,background .25s;}
@@ -88,7 +88,7 @@ body { font-family:'Rayat','Segoe UI',Arial,sans-serif; background:var(--bg); co
 .wk-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(2,15,26,.8) 0%,rgba(2,15,26,.1) 60%);z-index:1;}.wk-play{z-index:2;}.wk-title{z-index:2;}.wk-tag{z-index:2;}
 .wk-tag{position:absolute;top:12px;right:12px;font-size:10px;letter-spacing:.08em;color:rgba(0,255,204,.6);background:rgba(0,255,204,.07);border:.5px solid rgba(0,255,204,.15);padding:3px 10px;border-radius:20px;}
 .mani{padding:72px 52px;border-top:.5px solid rgba(0,255,204,.06);background:rgba(0,255,204,.015);}
-.mq{font-size:clamp(20px,3vw,34px);font-weight:800;font-style:italic;color:#fff;line-height:1.35;max-width:740px;}
+.mq{font-size:clamp(20px,3vw,34px);font-weight:800;font-style:normal;color:#fff;line-height:1.35;max-width:740px;}
 .mq .cy{color:var(--cyan);}
 .ma{margin-top:20px;font-size:12px;color:rgba(0,255,204,.25);letter-spacing:.1em;text-transform:uppercase;}
 .clients-grid{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px;}
@@ -102,7 +102,7 @@ body { font-family:'Rayat','Segoe UI',Arial,sans-serif; background:var(--bg); co
 .chip{background:rgba(0,255,204,.035);border:.5px solid rgba(0,255,204,.08);border-radius:40px;padding:9px 20px;font-size:12px;color:rgba(0,255,204,.38);letter-spacing:.06em;transition:background .2s,border-color .2s,color .2s;cursor:default;}
 .chip:hover{background:rgba(0,255,204,.08);border-color:rgba(0,255,204,.3);color:rgba(0,255,204,.9);}
 .contact{padding:64px 52px;border-top:.5px solid rgba(0,255,204,.06);display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap;}
-.ct-t{font-size:clamp(28px,4vw,48px);font-weight:900;font-style:italic;color:#fff;line-height:1.05;}
+.ct-t{font-size:clamp(28px,4vw,48px);font-weight:900;font-style:normal;color:#fff;line-height:1.05;}
 .ct-t .cy{color:var(--cyan);}
 .ct-r{display:flex;flex-direction:column;gap:12px;align-items:flex-start;}
 .ct-info{font-size:13px;color:rgba(0,255,204,.4);display:flex;align-items:center;gap:8px;}
@@ -179,6 +179,14 @@ body { font-family:'Rayat','Segoe UI',Arial,sans-serif; background:var(--bg); co
   .cl-item img { height: 24px !important; }
 }
 
+
+/* Showreel Modal */
+.sr-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;align-items:center;justify-content:center;}
+.sr-overlay.open{display:flex;}
+.sr-box{position:relative;width:90vw;max-width:1000px;aspect-ratio:16/9;}
+.sr-box iframe{width:100%;height:100%;border:none;border-radius:12px;}
+.sr-close{position:absolute;top:-44px;right:0;background:none;border:none;color:#fff;font-size:32px;cursor:pointer;line-height:1;opacity:.8;transition:opacity .2s;}
+.sr-close:hover{opacity:1;}
 </style>
 </head>
 <body>
@@ -207,7 +215,7 @@ body { font-family:'Rayat','Segoe UI',Arial,sans-serif; background:var(--bg); co
     </h1>
     <p class="hero-sub" id="hs">في كوز، الإبداع هو الأساس، والتأثير هو الغاية.<br>كل فكرة نحكي فيها قصة، وكل قصة تصنع أثراً لا يُنسى.</p>
     <div class="hero-btns" id="hb">
-      <button class="btn-p">شوف الشورييل ←</button>
+      <button class="btn-p" onclick="document.getElementById('srModal').classList.add('open')">شوف الشورييل ←</button>
       <button class="btn-s">أعمالنا</button>
     </div>
   </div>
@@ -238,7 +246,7 @@ body { font-family:'Rayat','Segoe UI',Arial,sans-serif; background:var(--bg); co
 <div class="stats-row fade">
   <div class="stat"><div class="stat-num">+80</div><div class="stat-lbl">مشروع منجز</div></div>
   <div class="stat"><div class="stat-num">+40</div><div class="stat-lbl">عميل موثوق</div></div>
-  <div class="stat"><div class="stat-num">+5</div><div class="stat-lbl">سنوات خبرة</div></div>
+  <div class="stat"><div class="stat-num">+10</div><div class="stat-lbl">سنوات خبرة</div></div>
   <div class="stat"><div class="stat-num">3</div><div class="stat-lbl">شركاء إبداعيون</div></div>
 </div>
 
@@ -433,6 +441,27 @@ const obs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on');});
 },{threshold:.08});
 document.querySelectorAll('.fade').forEach(el=>obs.observe(el));
+</script>
+
+<!-- Showreel Modal -->
+<div class="sr-overlay" id="srModal" onclick="if(event.target===this)closeModal()">
+  <div class="sr-box">
+    <button class="sr-close" onclick="closeModal()">✕</button>
+    <iframe id="srFrame" src="" allow="autoplay; fullscreen" allowfullscreen></iframe>
+  </div>
+</div>
+<script>
+function closeModal(){
+  document.getElementById('srModal').classList.remove('open');
+  document.getElementById('srFrame').src='';
+}
+document.querySelector('.sr-overlay').addEventListener('transitionend',function(){});
+document.getElementById('srModal').addEventListener('click',function(e){
+  if(e.target===this)closeModal();
+});
+document.querySelector('[onclick*="srModal"]').addEventListener('click',function(){
+  document.getElementById('srFrame').src='https://player.vimeo.com/video/1173160492?autoplay=1&loop=1&controls=1&title=0&byline=0&portrait=0&dnt=1';
+});
 </script>
 </body>
 </html>
