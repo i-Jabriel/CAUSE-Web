@@ -77,8 +77,8 @@ body { font-family:'Rayat','Segoe UI',Arial,sans-serif; background:var(--bg); co
 .pbar-txt span{color:var(--cyan);}
 .stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(0,255,204,.06);}
 .stat{background:var(--bg);padding:36px 28px;}
-.stat-num{font-size:44px;font-weight:900;color:var(--cyan);font-style:normal;line-height:1;letter-spacing:-.02em;}
-.stat-lbl{font-size:12px;color:rgba(255,255,255,.28);margin-top:8px;}
+.stat-num{font-size:72px;font-weight:900;color:var(--cyan);font-style:normal;line-height:1;letter-spacing:-.03em;}
+.stat-lbl{font-size:13px;color:rgba(255,255,255,.9);margin-top:10px;font-weight:500;}
 .works-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:36px;}
 .wk{background:rgba(0,255,204,.035);border:.5px solid rgba(0,255,204,.08);border-radius:10px;aspect-ratio:16/10;display:flex;align-items:flex-end;padding:14px;cursor:pointer;position:relative;overflow:hidden;transition:border-color .25s,background .25s;}
 .wk:hover{border-color:rgba(0,255,204,.3);background:rgba(0,255,204,.06);}
@@ -353,10 +353,10 @@ body { font-family:'Rayat','Segoe UI',Arial,sans-serif; background:var(--bg); co
 <div class="pbar fade"><div class="pbar-line"></div><div class="pbar-txt">أثر ممتد — <span>من هنا تبدأ الحكاية</span>، ومن هنا يظهر الأثر.</div></div>
 
 <div class="stats-row fade">
-  <div class="stat"><div class="stat-num">+80</div><div class="stat-lbl">مشروع منجز</div></div>
-  <div class="stat"><div class="stat-num">+40</div><div class="stat-lbl">عميل موثوق</div></div>
-  <div class="stat"><div class="stat-num">+10</div><div class="stat-lbl">سنوات خبرة</div></div>
-  <div class="stat"><div class="stat-num">3</div><div class="stat-lbl">شركاء إبداعيون</div></div>
+  <div class="stat"><div class="stat-num" data-target="80" data-prefix="+">+80</div><div class="stat-lbl">مشروع منجز</div></div>
+  <div class="stat"><div class="stat-num" data-target="40" data-prefix="+">+40</div><div class="stat-lbl">عميل موثوق</div></div>
+  <div class="stat"><div class="stat-num" data-target="10" data-prefix="+">+10</div><div class="stat-lbl">سنوات خبرة</div></div>
+  <div class="stat"><div class="stat-num" data-target="10" data-suffix="M+">10M+</div><div class="stat-lbl">مشاهدة</div></div>
 </div>
 
 <section class="sec fade">
@@ -569,6 +569,33 @@ const obs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on');});
 },{threshold:.08});
 document.querySelectorAll('.fade').forEach(el=>obs.observe(el));
+
+// Counter animation
+function animateCounter(el) {
+  const target = +el.dataset.target;
+  const prefix = el.dataset.prefix || '';
+  const suffix = el.dataset.suffix || '';
+  const duration = 1800;
+  const start = performance.now();
+  (function step(now) {
+    const p = Math.min((now - start) / duration, 1);
+    const ease = 1 - Math.pow(1 - p, 3);
+    const val = Math.floor(ease * target);
+    el.textContent = prefix + val + suffix;
+    if (p < 1) requestAnimationFrame(step);
+    else el.textContent = prefix + target + suffix;
+  })(start);
+}
+const statObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting && !e.target.dataset.counted) {
+      e.target.dataset.counted = '1';
+      animateCounter(e.target);
+    }
+  });
+}, {threshold: 0.5});
+document.querySelectorAll('.stat-num[data-target]').forEach(el => statObs.observe(el));
+
 </script>
 
 <!-- Showreel Modal -->
