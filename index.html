@@ -60,15 +60,17 @@ body { font-family:'Rayat','Segoe UI',Arial,sans-serif; background:var(--bg); co
 .sec-lbl { font-size:10px;letter-spacing:.2em;color:rgba(0,255,204,.25);text-transform:uppercase;margin-bottom:36px;display:flex;align-items:center;gap:12px; }
 .sec-lbl::before{content:'';width:18px;height:.5px;background:rgba(0,255,204,.25);}
 .sec-title{font-size:clamp(28px,4vw,42px);font-weight:800;color:#fff;font-style:normal;}
-.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(0,255,204,.07);margin-top:36px;}
-.svc{background:var(--bg);padding:36px 28px;cursor:pointer;transition:background .25s;position:relative;}
-.svc:hover{background:#041220;}
-.svc:hover .svc-n{color:var(--cyan);}
-.svc-n{font-size:10px;color:rgba(0,255,204,.2);letter-spacing:.08em;margin-bottom:14px;transition:color .25s;}
-.svc-name{font-size:17px;font-weight:700;color:#fff;margin-bottom:10px;}
-.svc-desc{font-size:13px;color:rgba(0,255,204,.3);line-height:1.65;}
-.svc-arr{position:absolute;top:26px;left:26px;font-size:14px;color:var(--cyan);opacity:0;transform:translate(0,0);transition:opacity .2s,transform .2s;}
-.svc:hover .svc-arr{opacity:1;transform:translate(-4px,-4px);}
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:14px;margin-top:40px;}
+.svc{border-radius:22px;min-height:220px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;cursor:pointer;padding:28px 22px 22px;transition:transform .35s cubic-bezier(.4,0,.2,1),box-shadow .35s cubic-bezier(.4,0,.2,1);}
+.svc:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(0,0,0,0.5),0 0 30px rgba(0,255,204,0.15);}
+.svc::after{content:'';position:absolute;inset:0;border-radius:22px;border:1px solid rgba(0,255,204,0.2);background:radial-gradient(ellipse at 80% 20%,rgba(0,255,204,0.12) 0%,rgba(0,255,204,0.04) 40%,rgba(0,0,0,0.08) 100%);pointer-events:none;transition:opacity .35s ease;}.svc::before{content:'';position:absolute;inset:0;border-radius:22px;border:1px solid rgba(0,255,204,0.5);background:radial-gradient(ellipse at 70% 20%,rgba(0,255,204,0.28) 0%,rgba(0,255,204,0.08) 50%,transparent 100%);pointer-events:none;opacity:0;transition:opacity .35s ease;z-index:1;}.svc:hover::before{opacity:1;}
+.svc-art{position:absolute;inset:0;width:100%;height:100%;opacity:0.5;}
+.svc-n{font-size:11px;font-weight:300;letter-spacing:4px;color:rgba(255,255,255,0.35);position:relative;z-index:2;margin-bottom:0;}
+.svc-name{font-size:clamp(26px,3vw,38px);font-weight:600;color:#fff;margin:0 0 8px;line-height:1.15;position:relative;z-index:2;letter-spacing:-0.01em;}
+.svc-desc{font-size:13px;font-weight:500;color:rgba(255,255,255,0.55);line-height:1.7;margin:0;position:relative;z-index:2;}
+.svc-body{position:relative;z-index:2;}
+.svc-arr{position:absolute;bottom:18px;left:18px;z-index:3;width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.7);font-size:13px;opacity:0;transition:opacity .2s;}
+.svc:hover .svc-arr{opacity:1;}
 .pbar { padding:34px 52px;border-top:.5px solid rgba(0,255,204,.1);border-bottom:.5px solid rgba(0,255,204,.1);background:rgba(0,255,204,.02);display:flex;align-items:center;gap:22px; }
 .pbar-line{width:2px;height:38px;background:var(--cyan);opacity:.6;flex-shrink:0;}
 .pbar-txt{font-size:clamp(15px,2.2vw,20px);font-weight:800;font-style:normal;color:#fff;line-height:1.3;}
@@ -249,11 +251,102 @@ body { font-family:'Rayat','Segoe UI',Arial,sans-serif; background:var(--bg); co
 <section class="sec fade">
   <div class="sec-title">خدماتنا الإبداعية</div>
   <div class="svc-grid">
-    <div class="svc"><div class="svc-n">01</div><div class="svc-name">إنتاج الأفلام والإعلانات</div><div class="svc-desc">من الفكرة إلى الكاميرا — نبني المشهد بكل تفاصيله</div><span class="svc-arr">↗</span></div>
-    <div class="svc"><div class="svc-n">02</div><div class="svc-name">ما بعد الإنتاج</div><div class="svc-desc">مونتاج، موشن جرافيك، تلوين وصوت</div><span class="svc-arr">↗</span></div>
-    <div class="svc"><div class="svc-n">03</div><div class="svc-name">التسويق الإبداعي</div><div class="svc-desc">محتوى يُحرّك الناس — مصمم للأثر لا للتمرير</div><span class="svc-arr">↗</span></div>
-    <div class="svc" style="grid-column:span 2"><div class="svc-n">04</div><div class="svc-name">الخدمات الإبداعية</div><div class="svc-desc">هوية بصرية، استراتيجية محتوى، وكل ما يجعل علامتك لا تُنسى</div><span class="svc-arr">↗</span></div>
-    <div class="svc"><div class="svc-n">05</div><div class="svc-name">الإخراج الإبداعي</div><div class="svc-desc">رؤية مخرج يفهم الأثر ويصنع اللحظة</div><span class="svc-arr">↗</span></div>
+
+    <div class="svc" style="grid-column:span 2;grid-row:1;">
+      <svg class="svc-art" viewBox="0 0 500 220" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="s1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#3a1a6e"/><stop offset="40%" stop-color="#1a6888"/><stop offset="75%" stop-color="#00c8b0"/><stop offset="100%" stop-color="#00FFCC"/></linearGradient>
+          <radialGradient id="s1r" cx="75%" cy="65%" r="45%"><stop offset="0%" stop-color="#00f0cc" stop-opacity="0.5"/><stop offset="100%" stop-color="#00f0cc" stop-opacity="0"/></radialGradient>
+        </defs>
+        <rect width="500" height="220" fill="url(#s1)"/>
+        <rect width="500" height="220" fill="url(#s1r)"/>
+        <path d="M0,80 Q200,200 500,130" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="55"/>
+        <path d="M0,80 Q200,200 500,130" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
+      </svg>
+      <span class="svc-n">01</span>
+      <div class="svc-body">
+        <div class="svc-name">إنتاج الأفلام والإعلانات</div>
+        <div class="svc-desc">من الفكرة إلى الكاميرا — نبني المشهد بكل تفاصيله</div>
+      </div>
+      <span class="svc-arr">↗</span>
+    </div>
+
+    <div class="svc" style="grid-column:span 1;grid-row:span 2;">
+      <svg class="svc-art" viewBox="0 0 230 220" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="s2" x1="0.3" y1="0" x2="0.7" y2="1"><stop offset="0%" stop-color="#2a0e55"/><stop offset="50%" stop-color="#155e7a"/><stop offset="100%" stop-color="#00e8c0"/></linearGradient>
+          <radialGradient id="s2r" cx="60%" cy="80%" r="50%"><stop offset="0%" stop-color="#00FFCC" stop-opacity="0.4"/><stop offset="100%" stop-color="#00FFCC" stop-opacity="0"/></radialGradient>
+        </defs>
+        <rect width="230" height="220" fill="url(#s2)"/>
+        <rect width="230" height="220" fill="url(#s2r)"/>
+        <path d="M-20,140 Q115,90 250,160" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="40"/>
+        <path d="M-20,140 Q115,90 250,160" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+      </svg>
+      <span class="svc-n">02</span>
+      <div class="svc-body">
+        <div class="svc-name">ما بعد الإنتاج</div>
+        <div class="svc-desc">مونتاج، موشن جرافيك، تلوين وصوت</div>
+      </div>
+      <span class="svc-arr">↗</span>
+    </div>
+
+    <div class="svc">
+      <svg class="svc-art" viewBox="0 0 230 220" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="s3" x1="1" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1a0840"/><stop offset="45%" stop-color="#0e4d6e"/><stop offset="100%" stop-color="#00d4b0"/></linearGradient>
+          <radialGradient id="s3r" cx="20%" cy="70%" r="55%"><stop offset="0%" stop-color="#00FFCC" stop-opacity="0.35"/><stop offset="100%" stop-color="#00FFCC" stop-opacity="0"/></radialGradient>
+        </defs>
+        <rect width="230" height="220" fill="url(#s3)"/>
+        <rect width="230" height="220" fill="url(#s3r)"/>
+        <path d="M250,60 Q100,110 -20,180" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="45"/>
+        <path d="M250,60 Q100,110 -20,180" fill="none" stroke="rgba(255,255,255,0.11)" stroke-width="1"/>
+      </svg>
+      <span class="svc-n">03</span>
+      <div class="svc-body">
+        <div class="svc-name">التسويق الإبداعي</div>
+        <div class="svc-desc">محتوى يُحرّك الناس — مصمم للأثر لا للتمرير</div>
+      </div>
+      <span class="svc-arr">↗</span>
+    </div>
+
+    <div class="svc">
+      <svg class="svc-art" viewBox="0 0 230 220" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="s4" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#220a50"/><stop offset="55%" stop-color="#116070"/><stop offset="100%" stop-color="#00e0c0"/></linearGradient>
+          <radialGradient id="s4r" cx="85%" cy="85%" r="50%"><stop offset="0%" stop-color="#00FFCC" stop-opacity="0.45"/><stop offset="100%" stop-color="#00FFCC" stop-opacity="0"/></radialGradient>
+        </defs>
+        <rect width="230" height="220" fill="url(#s4)"/>
+        <rect width="230" height="220" fill="url(#s4r)"/>
+        <path d="M0,160 Q80,80 230,100" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="40"/>
+        <path d="M0,160 Q80,80 230,100" fill="none" stroke="rgba(255,255,255,0.11)" stroke-width="1"/>
+      </svg>
+      <span class="svc-n">04</span>
+      <div class="svc-body">
+        <div class="svc-name">الخدمات الإبداعية</div>
+        <div class="svc-desc">هوية بصرية، استراتيجية محتوى، وكل ما يجعل علامتك لا تُنسى</div>
+      </div>
+      <span class="svc-arr">↗</span>
+    </div>
+
+    <div class="svc" style="grid-column:span 2;grid-row:2;">
+      <svg class="svc-art" viewBox="0 0 500 220" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="s5" x1="0.2" y1="0" x2="0.8" y2="1"><stop offset="0%" stop-color="#2e0d60"/><stop offset="40%" stop-color="#0d5575"/><stop offset="80%" stop-color="#00c8aa"/><stop offset="100%" stop-color="#00FFCC"/></linearGradient>
+          <radialGradient id="s5r" cx="50%" cy="90%" r="55%"><stop offset="0%" stop-color="#00FFCC" stop-opacity="0.4"/><stop offset="100%" stop-color="#00FFCC" stop-opacity="0"/></radialGradient>
+        </defs>
+        <rect width="500" height="220" fill="url(#s5)"/>
+        <rect width="500" height="220" fill="url(#s5r)"/>
+        <path d="M0,100 Q250,180 500,80" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="55"/>
+        <path d="M0,100 Q250,180 500,80" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
+      </svg>
+      <span class="svc-n">05</span>
+      <div class="svc-body">
+        <div class="svc-name">الإخراج الإبداعي</div>
+        <div class="svc-desc">رؤية مخرج يفهم الأثر ويصنع اللحظة</div>
+      </div>
+      <span class="svc-arr">↗</span>
+    </div>
+
   </div>
 </section>
 
