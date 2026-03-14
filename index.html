@@ -109,6 +109,22 @@ body { font-family:'Rayat','Segoe UI',Arial,sans-serif; background:var(--bg); co
 .ct-dot{width:5px;height:5px;background:var(--cyan);border-radius:50%;}
 .ct-btn{font-family:'Rayat','Segoe UI',Arial,sans-serif;background:var(--cyan);color:var(--bg);border:none;padding:13px 34px;border-radius:40px;font-size:14px;font-weight:700;cursor:pointer;margin-top:6px;transition:opacity .2s;}
 .ct-btn:hover{opacity:.88;}
+.modal-overlay{position:fixed;inset:0;background:rgba(2,15,26,.85);backdrop-filter:blur(6px);z-index:10000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;}
+.modal-overlay.open{opacity:1;pointer-events:all;}
+.modal{background:#071e30;border:.5px solid rgba(0,255,204,.15);border-radius:20px;padding:40px 36px;width:100%;max-width:460px;position:relative;transform:translateY(24px);transition:transform .3s;}
+.modal-overlay.open .modal{transform:translateY(0);}
+.modal-close{position:absolute;top:16px;left:20px;background:none;border:none;color:rgba(255,255,255,.4);font-size:22px;cursor:pointer;line-height:1;}
+.modal-close:hover{color:#fff;}
+.modal-title{font-size:22px;font-weight:900;margin-bottom:6px;}
+.modal-title .cy{color:var(--cyan);}
+.modal-sub{font-size:13px;color:rgba(255,255,255,.4);margin-bottom:28px;}
+.modal label{display:block;font-size:12px;color:rgba(0,255,204,.6);margin-bottom:6px;margin-top:18px;}
+.modal input,.modal textarea,.modal select{width:100%;background:rgba(0,255,204,.04);border:.5px solid rgba(0,255,204,.15);border-radius:10px;padding:12px 14px;color:#fff;font-family:'Rayat','Segoe UI',Arial,sans-serif;font-size:13px;outline:none;box-sizing:border-box;transition:border .2s;}
+.modal input:focus,.modal textarea:focus,.modal select:focus{border-color:rgba(0,255,204,.5);}
+.modal textarea{resize:none;height:90px;}
+.modal-send{width:100%;margin-top:24px;background:var(--cyan);color:var(--bg);border:none;padding:14px;border-radius:40px;font-size:14px;font-weight:700;cursor:pointer;font-family:'Rayat','Segoe UI',Arial,sans-serif;transition:opacity .2s;}
+.modal-send:hover{opacity:.88;}
+@media(max-width:600px){.modal{padding:28px 18px;margin:16px;}}
 .footer{border-top:.5px solid rgba(0,255,204,.05);padding:22px 52px;display:flex;justify-content:space-between;align-items:center;}
 .fl{font-size:11px;color:rgba(0,255,204,.16);}
 .fr{font-size:11px;color:rgba(0,255,204,.2);letter-spacing:.08em;}
@@ -407,7 +423,26 @@ body { font-family:'Rayat','Segoe UI',Arial,sans-serif; background:var(--bg); co
     <div class="ct-info"><div class="ct-dot"></div><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6b22252d242b282a3e382e45382a">[email&#160;protected]</a></div>
     <div class="ct-info"><div class="ct-dot"></div>0568890480</div>
     <div class="ct-info"><div class="ct-dot"></div>CAUSE.SA</div>
-    <button class="ct-btn">تعال نبدع سوا</button>
+    <button class="ct-btn" onclick="document.getElementById('contactModal').classList.add('open')">تعال نبدع سوا</button>
+  </div>
+</div>
+
+<div class="modal-overlay" id="contactModal" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="modal">
+    <button class="modal-close" onclick="document.getElementById('contactModal').classList.remove('open')">✕</button>
+    <div class="modal-title">نبدع <span class="cy">سوا</span></div>
+    <div class="modal-sub">خبّرنا عن مشروعك وبنتواصل معك.</div>
+    <form action="mailto:info@cause.sa" method="post" enctype="text/plain">
+      <label>الاسم</label>
+      <input type="text" name="الاسم" placeholder="اسمك الكريم" required>
+      <label>رقم الجوال</label>
+      <input type="tel" name="الجوال" placeholder="+966 5X XXX XXXX" required>
+      <label>البريد الإلكتروني</label>
+      <input type="email" name="الإيميل" placeholder="example@email.com" required>
+      <label>وش تبغى تسوي معنا؟</label>
+      <textarea name="التفاصيل" placeholder="اختصر لنا المشروع أو الفكرة اللي تبغى تنفذها..." required></textarea>
+      <button type="submit" class="modal-send">أرسل الرسالة ←</button>
+    </form>
   </div>
 </div>
 
