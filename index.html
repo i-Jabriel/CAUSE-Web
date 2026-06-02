@@ -2,28 +2,37 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; frame-src https://player.vimeo.com; img-src 'self' data:; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://formsubmit.co; form-action 'self' https://formsubmit.co; font-src 'self' data:;">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; frame-src https://player.vimeo.com; img-src 'self' data: https://cause.sa; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://formsubmit.co; form-action 'self' https://formsubmit.co; font-src 'self' data: https://fonts.gstatic.com;">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="CAUSE Creative Studio — استوديو إبداعي متخصص في إنتاج الأفلام والإعلانات والموشن جرافيك">
-<meta property="og:title" content="CAUSE — نبدع معك">
-<meta property="og:description" content="استوديو إبداعي متخصص في إنتاج الأفلام والإعلانات والموشن جرافيك">
+<meta name="description" content="كوز CAUSE استوديو إبداعي في الرياض متخصص في إنتاج الأفلام والإعلانات، ما بعد الإنتاج، الموشن جرافيك، والتسويق الإبداعي للجهات الحكومية والشركات.">
+<meta name="keywords" content="كوز, CAUSE, استوديو إبداعي, إنتاج أفلام, إنتاج إعلانات, موشن جرافيك, ما بعد الإنتاج, الرياض, السعودية">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#020f1a">
+<meta property="og:title" content="CAUSE — استوديو إبداعي في الرياض">
+<meta property="og:description" content="ننتج الأفلام والإعلانات ونصنع محتوى إبداعي يترك أثراً للجهات والشركات.">
+<meta property="og:site_name" content="CAUSE Creative Studio">
+<meta property="og:locale" content="ar_SA">
+<meta property="og:image" content="https://cause.sa/icon-512.png">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://cause.sa">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="CAUSE — نبدع معك">
 <meta name="twitter:description" content="استوديو إبداعي متخصص في إنتاج الأفلام والإعلانات والموشن جرافيك">
+<meta name="twitter:image" content="https://cause.sa/icon-512.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
 <link rel="icon" href="favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="canonical" href="https://cause.sa/">
+<link rel="alternate" hreflang="ar-SA" href="https://cause.sa/">
+<link rel="alternate" hreflang="x-default" href="https://cause.sa/">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "CreativeWorkAgency",
   "name": "CAUSE Creative Studio",
   "url": "https://cause.sa",
-  "description": "استوديو إبداعي متخصص في إنتاج الأفلام والإعلانات والموشن جرافيك",
+  "description": "استوديو إبداعي في الرياض متخصص في إنتاج الأفلام والإعلانات والموشن جرافيك وما بعد الإنتاج والتسويق الإبداعي",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Riyadh",
@@ -367,7 +376,10 @@ body{position:relative;z-index:2;}
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-MFDTFKYXXW');
+  gtag('config', 'G-MFDTFKYXXW', {
+    'page_title': 'CAUSE — نبدع معك',
+    'page_location': 'https://cause.sa/'
+  });
 </script>
 </head>
 <body>
@@ -413,7 +425,7 @@ body{position:relative;z-index:2;}
 <nav class="nav">
   <img src="images/nav_logo_1.png" alt="CAUSE" style="height:104px;width:auto;">
   
-  <button class="nbtn" onclick="document.getElementById('contactModal').classList.add('open')">نبدع معك</button>
+  <button class="nbtn" data-track="cta_nav" onclick="openContactModal()">نبدع معك</button>
 </nav>
 
 <section class="hero">
@@ -432,8 +444,8 @@ body{position:relative;z-index:2;}
     </h1>
     <p class="hero-sub" id="hs">في كوز، الإبداع هو الأساس، والتأثير هو الغاية.<br>كل فكرة نحكي فيها قصة، وكل قصة تصنع أثراً لا يُنسى.</p>
     <div class="hero-btns" id="hb">
-      <button class="btn-p" onclick="document.getElementById('srModal').classList.add('open')">تعرف على كوز</button>
-      <a href="#works" class="btn-s" style="font-weight:bold;text-decoration:none;">أعمالنا</a>
+      <button class="btn-p" data-track="open_showreel" onclick="document.getElementById('srModal').classList.add('open')">تعرف على كوز</button>
+      <a href="#works" class="btn-s" data-track="view_works" style="font-weight:bold;text-decoration:none;">أعمالنا</a>
     </div>
   </div>
   <div class="si" id="si"><div class="si-line"></div><span class="si-txt">اكتشف</span></div>
@@ -753,18 +765,18 @@ body{position:relative;z-index:2;}
   <div><div class="ct-t">نبدع<br><span class="cy">معك.</span></div></div>
   <div class="ct-r">
 <div class="ct-info"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="rgba(0,255,204,0.7)"/></svg><a href="#" onclick="window.location.href='mai'+'lto:'+'info'+'@'+'cause.sa';return false;">info<span style="display:none">REMOVE</span>@cause.sa</a></div>
-    <div class="ct-info"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" fill="rgba(0,255,204,0.7)"/></svg>0568890480</div>
+    <div class="ct-info"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" fill="rgba(0,255,204,0.7)"/></svg><a href="tel:+966568890480" data-track="click_phone">0568890480</a></div>
 
-    <button class="ct-btn" onclick="document.getElementById('contactModal').classList.add('open')">تعال نبدع سوا</button>
+    <button class="ct-btn" data-track="cta_footer" onclick="openContactModal()">تعال نبدع سوا</button>
   </div>
 </div>
 
-<div class="modal-overlay" id="contactModal" onclick="if(event.target===this)this.classList.remove('open')">
+<div class="modal-overlay" id="contactModal" aria-hidden="true" onclick="if(event.target===this)closeContactModal()">
   <div class="modal">
-    <button class="modal-close" onclick="document.getElementById('contactModal').classList.remove('open')">✕</button>
+    <button class="modal-close" onclick="closeContactModal()" aria-label="إغلاق نموذج التواصل">✕</button>
     <div class="modal-title">نبدع سوا</div>
     <div class="modal-sub">علمنا بمشروعك وبنتواصل معك.</div>
-    <form action="https://formsubmit.co/info@cause.sa" method="POST">
+    <form id="contactForm" action="https://formsubmit.co/info@cause.sa" method="POST">
       <input type="hidden" name="_subject" value="رسالة جديدة من موقع CAUSE">
       <input type="hidden" name="_captcha" value="true">
       <input type="hidden" name="_template" value="box">
@@ -785,15 +797,52 @@ body{position:relative;z-index:2;}
 <footer class="footer">
   <span class="fl">© 2026 CAUSE Creative Studio</span>
   <div class="social-icons">
-    <a href="https://x.com/causeksa" target="_blank" rel="noopener noreferrer" class="soc-btn"><img loading="lazy" src="images/social_1.png" alt="X"></a>
-    <a href="https://instagram.com/causeksa" target="_blank" rel="noopener noreferrer" class="soc-btn"><img loading="lazy" src="images/social_2.png" alt="Instagram"></a>
-    <a href="https://www.linkedin.com/company/causesaudi/" target="_blank" rel="noopener noreferrer" class="soc-btn"><img loading="lazy" src="images/social_3.png" alt="LinkedIn"></a>
-    <a href="https://tiktok.com/@causeksa" target="_blank" rel="noopener noreferrer" class="soc-btn"><img loading="lazy" src="images/social_4.png" alt="TikTok"></a>
+    <a href="https://x.com/causeksa" target="_blank" rel="noopener noreferrer" class="soc-btn" data-track="social_x"><img loading="lazy" src="images/social_1.png" alt="X"></a>
+    <a href="https://instagram.com/causeksa" target="_blank" rel="noopener noreferrer" class="soc-btn" data-track="social_instagram"><img loading="lazy" src="images/social_2.png" alt="Instagram"></a>
+    <a href="https://www.linkedin.com/company/causesaudi/" target="_blank" rel="noopener noreferrer" class="soc-btn" data-track="social_linkedin"><img loading="lazy" src="images/social_3.png" alt="LinkedIn"></a>
+    <a href="https://tiktok.com/@causeksa" target="_blank" rel="noopener noreferrer" class="soc-btn" data-track="social_tiktok"><img loading="lazy" src="images/social_4.png" alt="TikTok"></a>
   </div>
   <span class="fr">من هنا تبدأ الحكاية</span>
 </footer>
 
 <script>
+
+function trackEvent(name, params = {}){
+  if (typeof gtag === 'function') {
+    gtag('event', name, Object.assign({
+      event_category: 'engagement',
+      transport_type: 'beacon'
+    }, params));
+  }
+}
+function openContactModal(){
+  const modal = document.getElementById('contactModal');
+  modal.classList.add('open');
+  modal.setAttribute('aria-hidden','false');
+  trackEvent('generate_lead_open', {event_label:'contact_modal'});
+}
+function closeContactModal(){
+  const modal = document.getElementById('contactModal');
+  modal.classList.remove('open');
+  modal.setAttribute('aria-hidden','true');
+}
+document.addEventListener('click', function(e){
+  const target = e.target.closest('[data-track], .wk, a[href^="mailto"], a[href^="tel"]');
+  if(!target) return;
+  const label = target.dataset.track || target.href || target.textContent.trim().slice(0,60);
+  if(target.classList.contains('wk')) {
+    trackEvent('select_content', {content_type:'portfolio_work', event_label: target.querySelector('.wk-title')?.textContent || 'work'});
+  } else {
+    trackEvent('cta_click', {event_label: label});
+  }
+});
+const contactForm = document.getElementById('contactForm');
+if(contactForm){
+  contactForm.addEventListener('submit', function(){
+    trackEvent('generate_lead_submit', {event_label:'contact_form'});
+  });
+}
+
 const cur=document.getElementById('cur');
 const ring=document.getElementById('ring');
 let mx=-300,my=-300,rx=-300,ry=-300;
