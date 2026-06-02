@@ -108,7 +108,7 @@ body { font-family:'Rayat','Segoe UI',Arial,sans-serif; background:var(--bg); co
 .sec-lbl { font-size:10px;letter-spacing:.2em;color:rgba(0,255,204,.25);text-transform:uppercase;margin-bottom:36px;display:flex;align-items:center;gap:12px; }
 .sec-lbl::before{content:'';width:18px;height:.5px;background:rgba(0,255,204,.25);}
 .sec-title{font-size:clamp(32px,5vw,56px);font-weight:400;color:#fff;font-style:normal;}
-.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:14px;margin-top:40px;}
+.svc-grid{display:grid;grid-template-columns:repeat(5,1fr);grid-auto-rows:220px;gap:14px;margin-top:40px;}
 .svc{border-radius:22px;min-height:220px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;cursor:pointer;padding:28px 22px 22px;transition:transform .35s cubic-bezier(.4,0,.2,1),box-shadow .35s cubic-bezier(.4,0,.2,1);}
 .svc:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(0,0,0,0.5),0 0 30px rgba(0,255,204,0.15);}
 .svc::after{content:'';position:absolute;inset:0;border-radius:22px;border:1px solid rgba(0,255,204,0.2);background:radial-gradient(ellipse at 80% 20%,rgba(0,255,204,0.12) 0%,rgba(0,255,204,0.04) 40%,rgba(0,0,0,0.08) 100%);pointer-events:none;transition:opacity .35s ease;}.svc::before{content:'';position:absolute;inset:0;border-radius:22px;border:1px solid rgba(0,255,204,0.5);background:radial-gradient(ellipse at 70% 20%,rgba(0,255,204,0.28) 0%,rgba(0,255,204,0.08) 50%,transparent 100%);pointer-events:none;opacity:0;transition:opacity .35s ease;z-index:1;}.svc:hover::before{opacity:1;}
@@ -501,6 +501,26 @@ body{position:relative;z-index:2;}
       <span class="svc-arr">↗</span>
     </div>
 
+
+    <div class="svc" style="grid-column:span 1;grid-row:span 2;">
+      <svg class="svc-art" viewBox="0 0 230 220" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="s6" x1="0.3" y1="0" x2="0.7" y2="1"><stop offset="0%" stop-color="#1a0840"/><stop offset="45%" stop-color="#0e4d6e"/><stop offset="100%" stop-color="#00d4b0"/></linearGradient>
+          <radialGradient id="s6r" cx="60%" cy="80%" r="50%"><stop offset="0%" stop-color="#00FFCC" stop-opacity="0.38"/><stop offset="100%" stop-color="#00FFCC" stop-opacity="0"/></radialGradient>
+        </defs>
+        <rect width="230" height="220" fill="url(#s6)"/>
+        <rect width="230" height="220" fill="url(#s6r)"/>
+        <path d="M-20,140 Q115,90 250,160" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="40"/>
+        <path d="M-20,140 Q115,90 250,160" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+      </svg>
+      <span class="svc-n">06</span>
+      <div class="svc-body">
+        <div class="svc-name">الذكاء الاصطناعي</div>
+        <div class="svc-desc">ننتج فيديوهات سينمائية بتقنيات الذكاء الاصطناعي — من الفكرة إلى مشهد جاهز للأثر</div>
+      </div>
+      <span class="svc-arr">↗</span>
+    </div>
+
     <div class="svc">
       <svg class="svc-art" viewBox="0 0 230 220" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
         <defs>
@@ -558,29 +578,6 @@ body{position:relative;z-index:2;}
       <span class="svc-arr">↗</span>
     </div>
 
-
-    <div class="svc" style="grid-column:span 2;grid-row:3;">
-      <svg class="svc-art" viewBox="0 0 500 220" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="s6" x1="0.15" y1="0" x2="0.85" y2="1"><stop offset="0%" stop-color="#170b42"/><stop offset="38%" stop-color="#063b63"/><stop offset="72%" stop-color="#007b73"/><stop offset="100%" stop-color="#00FFCC"/></linearGradient>
-          <radialGradient id="s6r" cx="72%" cy="72%" r="52%"><stop offset="0%" stop-color="#00FFCC" stop-opacity="0.48"/><stop offset="100%" stop-color="#00FFCC" stop-opacity="0"/></radialGradient>
-          <linearGradient id="s6line" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#fff" stop-opacity="0"/><stop offset="50%" stop-color="#fff" stop-opacity="0.16"/><stop offset="100%" stop-color="#fff" stop-opacity="0"/></linearGradient>
-        </defs>
-        <rect width="500" height="220" fill="url(#s6)"/>
-        <rect width="500" height="220" fill="url(#s6r)"/>
-        <path d="M-20,150 Q150,95 520,130" fill="none" stroke="url(#s6line)" stroke-width="1.4"/>
-        <path d="M0,180 Q230,135 500,165" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="46"/>
-        <path d="M70,42 L92,68 L122,60 L102,88 L116,116 L84,102 L58,124 L64,88 L38,68 L72,70 Z" fill="rgba(255,255,255,0.07)"/>
-        <circle cx="390" cy="62" r="30" fill="none" stroke="rgba(0,255,204,0.2)" stroke-width="1"/>
-        <circle cx="390" cy="62" r="5" fill="rgba(0,255,204,0.5)"/>
-      </svg>
-      <span class="svc-n">06</span>
-      <div class="svc-body">
-        <div class="svc-name">الذكاء الاصطناعي</div>
-        <div class="svc-desc">ننتج فيديوهات سينمائية بتقنيات الذكاء الاصطناعي — من الفكرة إلى مشهد جاهز للأثر</div>
-      </div>
-      <span class="svc-arr">↗</span>
-    </div>
 
   </div>
 </section>
