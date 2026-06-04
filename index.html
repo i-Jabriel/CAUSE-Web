@@ -149,6 +149,12 @@ body { font-family:'Rayat','Segoe UI',Arial,sans-serif; background:var(--bg); co
 .sound-badge.on{opacity:1;}
 .sound-dot{width:6px;height:6px;background:var(--cyan);border-radius:50%;animation:sdot 1.8s ease-in-out infinite;}
 @keyframes sdot{0%,100%{transform:scale(1)}50%{transform:scale(1.4);}}
+.studio-line { position:relative;z-index:10;padding:38px 52px 34px;border-top:.5px solid rgba(0,255,204,.08);border-bottom:.5px solid rgba(0,255,204,.05);background:linear-gradient(90deg,rgba(0,255,204,.035),rgba(2,15,26,.2) 42%,rgba(2,15,26,.55)); }
+.studio-line::before{content:'';position:absolute;top:0;right:52px;width:80px;height:.5px;background:var(--cyan);opacity:.65;}
+.studio-line-inner{max-width:920px;}
+.studio-line-title{font-size:clamp(26px,4vw,54px);font-weight:500;line-height:1.2;color:#fff;letter-spacing:-.015em;}
+.studio-line-title .cy{color:var(--cyan);}
+.studio-line-copy{margin-top:14px;font-size:clamp(14px,1.8vw,19px);font-weight:400;line-height:1.9;color:rgba(255,255,255,.66);max-width:760px;}
 .ticker-wrap { overflow:hidden;border-top:.5px solid rgba(0,255,204,.06);border-bottom:.5px solid rgba(0,255,204,.06);padding:13px 0;background:rgba(0,255,204,.012); }
 .ticker-track { display:flex;animation:tick 22s linear infinite;white-space:nowrap; }
 .ti { font-size:10px;letter-spacing:.18em;color:rgba(0,255,204,.25);text-transform:uppercase;padding:0 28px;flex-shrink:0;display:flex;align-items:center;gap:16px; }
@@ -250,6 +256,10 @@ body{position:relative;z-index:2;}
   .hero-content { padding: 0 20px 60px !important; }
 
   /* Ticker */
+  .studio-line { padding: 30px 20px 28px !important; }
+  .studio-line::before { right:20px !important;width:52px !important; }
+  .studio-line-title { font-size: clamp(25px, 8vw, 38px) !important; }
+  .studio-line-copy { font-size: 15px !important;line-height:1.8 !important;max-width:100% !important; }
   .ticker-wrap { padding: 12px 0 !important; }
 
   /* Sections padding */
@@ -501,6 +511,13 @@ body{position:relative;z-index:2;}
   </div>
   <div class="si" id="si"><div class="si-line"></div><span class="si-txt">اكتشف</span></div>
   <div class="sound-badge" id="sb"><div class="sound-dot"></div>Showreel</div>
+</section>
+
+<section class="studio-line fade" aria-label="تعريف كوز كاستوديو إبداعي في الرياض">
+  <div class="studio-line-inner">
+    <h2 class="studio-line-title">من فكرة صغيرة إلى مشهد <span class="cy">يؤثّر.</span></h2>
+    <p class="studio-line-copy">كوز استوديو إبداعي في الرياض لإنتاج الأفلام، الإعلانات، والمحتوى البصري.</p>
+  </div>
 </section>
 
 <div class="ticker-wrap">
