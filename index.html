@@ -115,11 +115,14 @@ body { font-family:'Rayat','Segoe UI',Arial,sans-serif; background:var(--bg); co
 .cur { position:fixed;left:0;top:0;width:9px;height:9px;background:var(--cyan);border-radius:50%;pointer-events:none;z-index:9999;transform:translate3d(-300px,-300px,0) translate(-50%,-50%);transition:transform .12s;will-change:transform; }
 .ring { position:fixed;left:0;top:0;width:34px;height:34px;border:1px solid rgba(0,255,204,.35);border-radius:50%;pointer-events:none;z-index:9998;transform:translate3d(-300px,-300px,0) translate(-50%,-50%);transition:transform .08s linear,width .28s,height .28s,border-color .28s;will-change:transform; }
 .nav { position:absolute;top:0;left:0;right:0;z-index:30;display:flex;justify-content:space-between;align-items:center;padding:22px 52px; }
+.nav-actions { display:flex;align-items:center;gap:10px; }
 .nav-links { display:flex;gap:28px;list-style:none; }
 .nav-links a { font-size:13px;color:rgba(255,255,255,.5);text-decoration:none;letter-spacing:.04em;transition:color .2s; }
 .nav-links a:hover { color:var(--cyan); }
-.nbtn { font-family:'Rayat','Segoe UI',Arial,sans-serif;font-size:13px;color:var(--bg);background:var(--cyan);border:none;padding:10px 24px;border-radius:40px;cursor:pointer;font-weight:700;transition:opacity .2s; }
+.nbtn { font-family:'Rayat','Segoe UI',Arial,sans-serif;font-size:13px;color:var(--bg);background:var(--cyan);border:1px solid var(--cyan);padding:10px 24px;border-radius:40px;cursor:pointer;font-weight:700;transition:opacity .2s,background .2s,color .2s,border-color .2s;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap; }
 .nbtn:hover{opacity:.88;}
+.nbtn.secondary { color:#fff;background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.22);backdrop-filter:blur(10px); }
+.nbtn.secondary:hover { color:var(--cyan);border-color:rgba(0,255,204,.55);background:rgba(0,255,204,.08); }
 .hero { position:relative;width:100%;height:100vh;overflow:hidden;display:flex;align-items:center; }
 .vimeo-bg { position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:177.78vh;height:100vh;min-width:100%;min-height:56.25vw;pointer-events:none;z-index:0;opacity:0;transition:opacity 1.5s ease; }
 .vimeo-bg.loaded { opacity:1; }
@@ -239,6 +242,8 @@ body{position:relative;z-index:2;}
   /* Nav */
   nav { padding: 16px 20px !important; }
   nav img[alt="CAUSE"] { height: 64px !important; }
+  .nav-actions { gap: 7px; }
+  .nbtn { font-size: 11px !important; padding: 8px 12px !important; }
   .nav-cta { font-size: 12px !important; padding: 8px 14px !important; }
 
   /* Hero */
@@ -475,8 +480,10 @@ body{position:relative;z-index:2;}
 
 <nav class="nav">
   <img src="images/nav_logo_1.png" alt="CAUSE" style="height:104px;width:auto;">
-  
-  <button class="nbtn" data-track="cta_nav" onclick="openContactModal()">نبدع معك</button>
+  <div class="nav-actions">
+    <a class="nbtn secondary" href="https://os.cause.sa" data-track="internal_platform_nav">المنصة الداخلية</a>
+    <button class="nbtn" data-track="cta_nav" onclick="openContactModal()">نبدع معك</button>
+  </div>
 </nav>
 
 <section class="hero">
